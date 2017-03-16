@@ -11,10 +11,13 @@ namespace Trivia
         {
             Name = name;
             Place = 0;
+            Purse = 0;
         }
 
         public string Name { get; set; }
 
         public int Place { get; set; }
+
+        public int Purse { get; set; }
     }
 }
