@@ -12,7 +12,6 @@ namespace UglyTrivia
 
         List<Player> _players = new List<Player>();
 
-        int[] _places = new int[6];
         int[] _purses = new int[6];
 
         bool[] _inPenaltyBox = new bool[6];
@@ -51,7 +50,6 @@ namespace UglyTrivia
 
             Player player = new Player(playerName);
             _players.Add(player);
-            _places[HowManyPlayers()] = 0;
             _purses[HowManyPlayers()] = 0;
             _inPenaltyBox[HowManyPlayers()] = false;
 
