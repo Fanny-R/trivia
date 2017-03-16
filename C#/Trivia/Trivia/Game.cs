@@ -77,12 +77,12 @@ namespace UglyTrivia
                     _isGettingOutOfPenaltyBox = true;
 
                     Console.WriteLine(_players[_currentPlayer].Name + " is getting out of the penalty box");
-                    _places[_currentPlayer] = _places[_currentPlayer] + roll;
-                    if (_places[_currentPlayer] > 11) _places[_currentPlayer] = _places[_currentPlayer] - 12;
+                    _players[_currentPlayer].Place = _players[_currentPlayer].Place + roll;
+                    if (_players[_currentPlayer].Place > 11) _players[_currentPlayer].Place = _players[_currentPlayer].Place - 12;
 
                     Console.WriteLine(_players[_currentPlayer].Name
                             + "'s new location is "
-                            + _places[_currentPlayer]);
+                            + _players[_currentPlayer].Place);
                     Console.WriteLine("The category is " + CurrentCategory());
                     AskQuestion();
                 }
@@ -96,12 +96,12 @@ namespace UglyTrivia
             else
             {
 
-                _places[_currentPlayer] = _places[_currentPlayer] + roll;
-                if (_places[_currentPlayer] > 11) _places[_currentPlayer] = _places[_currentPlayer] - 12;
+                _players[_currentPlayer].Place = _players[_currentPlayer].Place + roll;
+                if (_players[_currentPlayer].Place > 11) _players[_currentPlayer].Place = _players[_currentPlayer].Place - 12;
 
                 Console.WriteLine(_players[_currentPlayer].Name
                         + "'s new location is "
-                        + _places[_currentPlayer]);
+                        + _players[_currentPlayer].Place);
                 Console.WriteLine("The category is " + CurrentCategory());
                 AskQuestion();
             }
@@ -135,15 +135,15 @@ namespace UglyTrivia
 
         private String CurrentCategory()
         {
-            if (_places[_currentPlayer] == 0) return "Pop";
-            if (_places[_currentPlayer] == 4) return "Pop";
-            if (_places[_currentPlayer] == 8) return "Pop";
-            if (_places[_currentPlayer] == 1) return "Science";
-            if (_places[_currentPlayer] == 5) return "Science";
-            if (_places[_currentPlayer] == 9) return "Science";
-            if (_places[_currentPlayer] == 2) return "Sports";
-            if (_places[_currentPlayer] == 6) return "Sports";
-            if (_places[_currentPlayer] == 10) return "Sports";
+            if (_players[_currentPlayer].Place == 0) return "Pop";
+            if (_players[_currentPlayer].Place == 4) return "Pop";
+            if (_players[_currentPlayer].Place == 8) return "Pop";
+            if (_players[_currentPlayer].Place == 1) return "Science";
+            if (_players[_currentPlayer].Place == 5) return "Science";
+            if (_players[_currentPlayer].Place == 9) return "Science";
+            if (_players[_currentPlayer].Place == 2) return "Sports";
+            if (_players[_currentPlayer].Place == 6) return "Sports";
+            if (_players[_currentPlayer].Place == 10) return "Sports";
             return "Rock";
         }
 

@@ -7,17 +7,14 @@ namespace Trivia
 {
     class Player
     {
-        private string _name;
-
         public Player(string name)
         {
             Name = name;
+            Place = 0;
         }
 
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
+        public string Name { get; set; }
+
+        public int Place { get; set; }
     }
 }
