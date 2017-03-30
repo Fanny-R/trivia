@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Trivia;
 
-namespace UglyTrivia
+namespace Trivia
 {
     public class Game
     {
@@ -22,7 +20,7 @@ namespace UglyTrivia
 
         public Game()
         {
-            for (int i = 0; i < 50; i++)
+            for (var i = 0; i < 50; i++)
             {
                 _popQuestions.AddLast("Pop Question " + i);
                 _scienceQuestions.AddLast(("Science Question " + i));
@@ -62,7 +60,7 @@ namespace UglyTrivia
             Console.WriteLine(_players[_currentPlayer].Name + " is the current player");
             Console.WriteLine("They have rolled a " + roll);
 
-            if (_players[_currentPlayer].isInPenaltyBox)
+            if (_players[_currentPlayer].IsInPenaltyBox)
             {
                 if (roll % 2 != 0)
                 {
@@ -141,7 +139,7 @@ namespace UglyTrivia
 
         public bool WasCorrectlyAnswered()
         {
-            if (_isGettingOutOfPenaltyBox || !_players[_currentPlayer].isInPenaltyBox)
+            if (_isGettingOutOfPenaltyBox || !_players[_currentPlayer].IsInPenaltyBox)
             {
                 Console.WriteLine("Answer was correct!!!!");
                 _players[_currentPlayer].Purse++;
@@ -165,7 +163,7 @@ namespace UglyTrivia
         {
             Console.WriteLine("Question was incorrectly answered");
             Console.WriteLine(_players[_currentPlayer].Name + " was sent to the penalty box");
-            _players[_currentPlayer].isInPenaltyBox = true;
+            _players[_currentPlayer].IsInPenaltyBox = true;
 
             _currentPlayer++;
             if (_currentPlayer == _players.Count) _currentPlayer = 0;
@@ -175,7 +173,7 @@ namespace UglyTrivia
 
         private bool DidPlayerWin()
         {
-            return !(_players[_currentPlayer].Purse == 6);
+            return _players[_currentPlayer].Purse != 6;
         }
     }
 

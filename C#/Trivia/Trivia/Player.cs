@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Permissions;
-using System.Text;
-
-namespace Trivia
+﻿namespace Trivia
 {
     class Player
     {
@@ -13,7 +7,7 @@ namespace Trivia
             Name = name;
             Place = 0;
             Purse = 0;
-            isInPenaltyBox = false;
+            IsInPenaltyBox = false;
         }
 
         public string Name { get; set; }
@@ -22,6 +16,6 @@ namespace Trivia
 
         public int Purse { get; set; }
 
-        public bool isInPenaltyBox { get; set; }
+        public bool IsInPenaltyBox { get; set; }
     }
 }
