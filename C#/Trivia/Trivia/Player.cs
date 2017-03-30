@@ -36,6 +36,7 @@ namespace Trivia
         public void GoToPenaltyBox()
         {
             InPenaltyBox = true;
+            Console.WriteLine(Name + " was sent to the penalty box");
         }
     }
 }
