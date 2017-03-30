@@ -14,15 +14,35 @@ namespace Trivia
         public Players()
         {
             ListPlayer = new List<Player>();
+            CurrentPlayer = null;
         }
         public void AddPlayer(Player player)
         {
+            
+            if (ListPlayer.Count == 0)
+            {
+                CurrentPlayer = player;
+            }
+
             ListPlayer.Add(player);
+            
         }
 
         public int NumberOfPlayers()
         {
             return ListPlayer.Count();
+        }
+
+        public void ChangeCurrentPlayer()
+        {
+            if (ListPlayer.IndexOf(CurrentPlayer) == ListPlayer.Count-1 )
+            {
+                CurrentPlayer = ListPlayer[0];
+            }
+            else
+            {
+                CurrentPlayer = ListPlayer[ListPlayer.IndexOf(CurrentPlayer) + 1];
+            }
         }
     }
 }
