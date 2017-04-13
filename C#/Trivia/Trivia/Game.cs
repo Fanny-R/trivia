@@ -6,19 +6,14 @@ namespace Trivia
     {
         private Players _players;
 
-        private Questions _questions = new Questions();
+        private Questions _questions;
 
         bool _isGettingOutOfPenaltyBox;
 
-        public Game(Players players)
+        public Game(Players players, Questions questions)
         {
             _players = players;
-            _questions.AddQuestionStack("Pop");
-            _questions.AddQuestionStack("Science");
-            _questions.AddQuestionStack("Sports");
-            _questions.AddQuestionStack("Rock");
-
-            _questions.GenerateQuestions();
+            _questions = questions;
         }
 
         public void Roll(int roll)

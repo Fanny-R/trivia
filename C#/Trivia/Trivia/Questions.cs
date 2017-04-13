@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Trivia
 {
-    class Questions
+    public class Questions
     {
         private List<QuestionStack> ListQuestionStack;
 
