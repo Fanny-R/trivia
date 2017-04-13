@@ -8,6 +8,7 @@ namespace Trivia
         private Players _players;
         private readonly Dictionary<int, string> _categories = new Dictionary<int, string>() {{0, "Pop"}, {1, "Science"}, {2, "Sports"}, {3, "Rock"}};
 
+        private Questions _questions = new Questions();
         private QuestionStack _questionStackPop = new QuestionStack("Pop");
         private QuestionStack _questionStackScience = new QuestionStack("Science");
         private QuestionStack _questionStackSports = new QuestionStack("Sports");
@@ -18,7 +19,12 @@ namespace Trivia
         public Game(Players players)
         {
             _players = players;
+            _questions.AddQuestionStack("Pop");
+            _questions.AddQuestionStack("Science");
+            _questions.AddQuestionStack("Sports");
+            _questions.AddQuestionStack("Rock"); 
 
+            _questions.GenerateQuestions();
             for (var i = 0; i < 50; i++)
             {
                 _questionStackPop.AddQuestion();
@@ -45,7 +51,7 @@ namespace Trivia
                     Console.WriteLine(_players.CurrentPlayer.Name
                             + "'s new location is "
                             + _players.CurrentPlayer.Place);
-                    Console.WriteLine("The category is " + CurrentCategory());
+                    Console.WriteLine("The category is " + _questions.GetQuestionStackName(CurrentCategory()));
                     AskQuestion();
                 }
                 else
@@ -62,7 +68,7 @@ namespace Trivia
                 Console.WriteLine(_players.CurrentPlayer.Name
                         + "'s new location is "
                         + _players.CurrentPlayer.Place);
-                Console.WriteLine("The category is " + CurrentCategory());
+                Console.WriteLine("The category is " + _questions.GetQuestionStackName(CurrentCategory()));
                 AskQuestion();
             }
 
@@ -70,6 +76,8 @@ namespace Trivia
 
         private void AskQuestion()
         {
+            Console.WriteLine(_questions.AskQuestion(CurrentCategory()));
+            /*
             if (CurrentCategory() == "Pop")
             {
                 Console.WriteLine(_questionStackPop.GetQuestion());
@@ -86,12 +94,13 @@ namespace Trivia
             {
                 Console.WriteLine(_questionStackRock.GetQuestion());
             }
+              */
         }
 
 
-        private string CurrentCategory()
+        private int CurrentCategory()
         {
-            return _categories[_players.CurrentPlayer.Place % 4];
+            return _players.CurrentPlayer.Place % 4;
         }
 
         public bool WasCorrectlyAnswered()
