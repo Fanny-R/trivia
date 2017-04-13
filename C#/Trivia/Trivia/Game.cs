@@ -6,7 +6,6 @@ namespace Trivia
 {
     public class Game
     {
-        private readonly List<Player> _listPlayers = new List<Player>();
         private Players players = new Players();
         private readonly Dictionary<int, string> _categories = new Dictionary<int, string>() {{0, "Pop"}, {1, "Science"}, {2, "Sports"}, {3, "Rock"}};
 
@@ -41,7 +40,6 @@ namespace Trivia
         public bool Add(string playerName)
         {
             Player player = new Player(playerName);
-            _listPlayers.Add(player);
             players.AddPlayer(player);
 
             Console.WriteLine(playerName + " was added");
