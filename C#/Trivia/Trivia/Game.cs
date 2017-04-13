@@ -4,9 +4,9 @@ namespace Trivia
 {
     public class Game
     {
-        private Players _players;
+        private readonly Players _players;
 
-        private Questions _questions;
+        private readonly Questions _questions;
 
         bool _isGettingOutOfPenaltyBox;
 

@@ -1,28 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace Trivia
 {
     public class Questions
     {
-        private List<QuestionStack> ListQuestionStack;
+        private readonly List<QuestionStack> _listQuestionStack;
 
         public Questions()
         {
-            ListQuestionStack = new List<QuestionStack>();
+            _listQuestionStack = new List<QuestionStack>();
         }
         public void AddQuestionStack(String name)
         {
-            ListQuestionStack.Add(new QuestionStack(name));
+            _listQuestionStack.Add(new QuestionStack(name));
         }
 
         public void GenerateQuestions()
         {
             for (var i = 0; i < 50; i++)
             {
-                foreach (QuestionStack currentQuestionStack in ListQuestionStack)
+                foreach (QuestionStack currentQuestionStack in _listQuestionStack)
                 {
                     currentQuestionStack.AddQuestion();
                 }
@@ -39,9 +36,9 @@ namespace Trivia
             return CurrentQuestionStack(playerPlace).Name;
         }
 
-        public QuestionStack CurrentQuestionStack(int playerPlace)
+        private QuestionStack CurrentQuestionStack(int playerPlace)
         {
-            return ListQuestionStack[playerPlace % ListQuestionStack.Count];
+            return _listQuestionStack[playerPlace % _listQuestionStack.Count];
         }
     }
 }
