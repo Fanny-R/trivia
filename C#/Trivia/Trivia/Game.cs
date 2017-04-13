@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Trivia
 {
@@ -27,21 +26,6 @@ namespace Trivia
                 _questionStackSports.AddQuestion();
                 _questionStackRock.AddQuestion();
             }
-        }
-
-        public string CreateRockQuestion(int index)
-        {
-            return "Rock Question " + index;
-        }
-
-        public bool IsPlayable()
-        {
-            return (HowManyPlayers() >= 2);
-        }
-
-        public int HowManyPlayers()
-        {
-            return _players.NumberOfPlayers();
         }
 
         public void Roll(int roll)
