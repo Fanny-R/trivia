@@ -16,9 +16,10 @@ namespace Trivia
             ListPlayer = new List<Player>();
             CurrentPlayer = null;
         }
-        public void AddPlayer(Player player)
+        public void AddPlayer(string playerName)
         {
-            
+            var player = new Player(playerName);
+
             if (ListPlayer.Count == 0)
             {
                 CurrentPlayer = player;

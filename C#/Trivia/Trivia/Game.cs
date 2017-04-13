@@ -39,8 +39,7 @@ namespace Trivia
 
         public bool Add(string playerName)
         {
-            Player player = new Player(playerName);
-            players.AddPlayer(player);
+            players.AddPlayer(playerName);
 
             Console.WriteLine(playerName + " was added");
             Console.WriteLine("They are player number " + players.NumberOfPlayers());
