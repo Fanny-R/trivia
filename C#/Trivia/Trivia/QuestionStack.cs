@@ -18,7 +18,7 @@ namespace Trivia
 
         public void AddQuestion()
         {
-            ListQuestions.AddLast(Name + " " + ListQuestions.Count);
+            ListQuestions.AddLast(Name + " Question " + ListQuestions.Count);
         }
 
         public String GetQuestion()

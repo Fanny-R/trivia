@@ -8,10 +8,10 @@ namespace Trivia
         private Players _players;
         private readonly Dictionary<int, string> _categories = new Dictionary<int, string>() {{0, "Pop"}, {1, "Science"}, {2, "Sports"}, {3, "Rock"}};
 
-        private QuestionStack _questionStackPop = new QuestionStack("Pop Question");
-        private QuestionStack _questionStackScience = new QuestionStack("Science Question");
-        private QuestionStack _questionStackSports = new QuestionStack("Sports Question");
-        private QuestionStack _questionStackRock = new QuestionStack("Rock Question");
+        private QuestionStack _questionStackPop = new QuestionStack("Pop");
+        private QuestionStack _questionStackScience = new QuestionStack("Science");
+        private QuestionStack _questionStackSports = new QuestionStack("Sports");
+        private QuestionStack _questionStackRock = new QuestionStack("Rock");
 
         bool _isGettingOutOfPenaltyBox;
 
