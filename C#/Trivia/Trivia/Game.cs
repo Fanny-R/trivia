@@ -13,10 +13,6 @@ namespace Trivia
         private QuestionStack _questionStackScience = new QuestionStack("Science Question");
         private QuestionStack _questionStackSports = new QuestionStack("Sports Question");
         private QuestionStack _questionStackRock = new QuestionStack("Rock Question");
-        LinkedList<string> popQuestions = new LinkedList<string>();
-        LinkedList<string> scienceQuestions = new LinkedList<string>();
-        LinkedList<string> sportsQuestions = new LinkedList<string>();
-        LinkedList<string> rockQuestions = new LinkedList<string>();
 
         bool isGettingOutOfPenaltyBox;
 
@@ -27,16 +23,9 @@ namespace Trivia
             for (var i = 0; i < 50; i++)
             {
                 _questionStackPop.AddQuestion();
-                /*
                 _questionStackScience.AddQuestion();
                 _questionStackSports.AddQuestion();
                 _questionStackRock.AddQuestion();
-                
-                popQuestions.AddLast("Pop Question " + i);
-                 */
-                scienceQuestions.AddLast(("Science Question " + i));
-                sportsQuestions.AddLast(("Sports Question " + i));
-                rockQuestions.AddLast(CreateRockQuestion(i));
             }
         }
 
@@ -103,18 +92,15 @@ namespace Trivia
             }
             if (CurrentCategory() == "Science")
             {
-                Console.WriteLine(scienceQuestions.First());
-                scienceQuestions.RemoveFirst();
+                Console.WriteLine(_questionStackScience.GetQuestion());
             }
             if (CurrentCategory() == "Sports")
             {
-                Console.WriteLine(sportsQuestions.First());
-                sportsQuestions.RemoveFirst();
+                Console.WriteLine(_questionStackSports.GetQuestion());
             }
             if (CurrentCategory() == "Rock")
             {
-                Console.WriteLine(rockQuestions.First());
-                rockQuestions.RemoveFirst();
+                Console.WriteLine(_questionStackRock.GetQuestion());
             }
         }
 
