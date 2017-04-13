@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Trivia
 {
-    class Players
+    public class Players
     {
         private List<Player> ListPlayer { get; set; }
         public Player CurrentPlayer { get; set; }
@@ -26,6 +26,8 @@ namespace Trivia
             }
 
             ListPlayer.Add(player);
+            Console.WriteLine(playerName + " was added");
+            Console.WriteLine("They are player number " + NumberOfPlayers());
             
         }
 
