@@ -13,7 +13,7 @@ namespace Trivia
         private QuestionStack _questionStackSports = new QuestionStack("Sports Question");
         private QuestionStack _questionStackRock = new QuestionStack("Rock Question");
 
-        bool isGettingOutOfPenaltyBox;
+        bool _isGettingOutOfPenaltyBox;
 
         public Game(Players players)
         {
@@ -37,7 +37,7 @@ namespace Trivia
             {
                 if (roll % 2 != 0)
                 {
-                    isGettingOutOfPenaltyBox = true;
+                    _isGettingOutOfPenaltyBox = true;
 
                     Console.WriteLine(_players.CurrentPlayer.Name + " is getting out of the penalty box");
                     _players.CurrentPlayer.Move(roll);
@@ -51,7 +51,7 @@ namespace Trivia
                 else
                 {
                     Console.WriteLine(_players.CurrentPlayer.Name + " is not getting out of the penalty box");
-                    isGettingOutOfPenaltyBox = false;
+                    _isGettingOutOfPenaltyBox = false;
                 }
 
             }
@@ -99,7 +99,7 @@ namespace Trivia
             bool winner;
             if (_players.CurrentPlayer.InPenaltyBox)
             {
-                if (isGettingOutOfPenaltyBox)
+                if (_isGettingOutOfPenaltyBox)
                 {
                     Console.WriteLine("Answer was correct!!!!");
                     _players.CurrentPlayer.WinAGoldCoin();
