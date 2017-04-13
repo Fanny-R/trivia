@@ -29,14 +29,19 @@ namespace Trivia
             }
         }
 
-        public String AskQuestion(int currentQuestionStack)
+        public String AskQuestion(int playerPlace)
         {
-            return ListQuestionStack[currentQuestionStack].GetQuestion();
+            return CurrentQuestionStack(playerPlace).GetQuestion();
         }
 
-        public String GetQuestionStackName(int currentQuestionStack)
+        public String GetQuestionStackName(int playerPlace)
         {
-            return ListQuestionStack[currentQuestionStack].Name;
+            return CurrentQuestionStack(playerPlace).Name;
+        }
+
+        public QuestionStack CurrentQuestionStack(int playerPlace)
+        {
+            return ListQuestionStack[playerPlace % ListQuestionStack.Count];
         }
     }
 }

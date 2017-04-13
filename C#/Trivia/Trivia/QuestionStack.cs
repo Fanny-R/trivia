@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Trivia
 {
-    class QuestionStack
+    public class QuestionStack
     {
         public string Name { get; private set; }
 

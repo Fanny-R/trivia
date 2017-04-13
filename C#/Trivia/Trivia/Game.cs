@@ -33,7 +33,7 @@ namespace Trivia
                     Console.WriteLine(_players.CurrentPlayer.Name
                             + "'s new location is "
                             + _players.CurrentPlayer.Place);
-                    Console.WriteLine("The category is " + _questions.GetQuestionStackName(CurrentCategory()));
+                    Console.WriteLine("The category is " + _questions.GetQuestionStackName(_players.CurrentPlayer.Place));
                     AskQuestion();
                 }
                 else
@@ -50,7 +50,7 @@ namespace Trivia
                 Console.WriteLine(_players.CurrentPlayer.Name
                         + "'s new location is "
                         + _players.CurrentPlayer.Place);
-                Console.WriteLine("The category is " + _questions.GetQuestionStackName(CurrentCategory()));
+                Console.WriteLine("The category is " + _questions.GetQuestionStackName(_players.CurrentPlayer.Place));
                 AskQuestion();
             }
 
@@ -58,13 +58,7 @@ namespace Trivia
 
         private void AskQuestion()
         {
-            Console.WriteLine(_questions.AskQuestion(CurrentCategory()));
-        }
-
-
-        private int CurrentCategory()
-        {
-            return _players.CurrentPlayer.Place % 4;
+            Console.WriteLine(_questions.AskQuestion(_players.CurrentPlayer.Place));
         }
 
         public bool WasCorrectlyAnswered()
