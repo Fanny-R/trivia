@@ -9,6 +9,10 @@ namespace Trivia
         private Players _players;
         private readonly Dictionary<int, string> _categories = new Dictionary<int, string>() {{0, "Pop"}, {1, "Science"}, {2, "Sports"}, {3, "Rock"}};
 
+        private QuestionStack _questionStackPop = new QuestionStack("Pop Question");
+        private QuestionStack _questionStackScience = new QuestionStack("Science Question");
+        private QuestionStack _questionStackSports = new QuestionStack("Sports Question");
+        private QuestionStack _questionStackRock = new QuestionStack("Rock Question");
         LinkedList<string> popQuestions = new LinkedList<string>();
         LinkedList<string> scienceQuestions = new LinkedList<string>();
         LinkedList<string> sportsQuestions = new LinkedList<string>();
@@ -22,7 +26,14 @@ namespace Trivia
 
             for (var i = 0; i < 50; i++)
             {
+                _questionStackPop.AddQuestion();
+                /*
+                _questionStackScience.AddQuestion();
+                _questionStackSports.AddQuestion();
+                _questionStackRock.AddQuestion();
+                
                 popQuestions.AddLast("Pop Question " + i);
+                 */
                 scienceQuestions.AddLast(("Science Question " + i));
                 sportsQuestions.AddLast(("Sports Question " + i));
                 rockQuestions.AddLast(CreateRockQuestion(i));
@@ -88,8 +99,7 @@ namespace Trivia
         {
             if (CurrentCategory() == "Pop")
             {
-                Console.WriteLine(popQuestions.First());
-                popQuestions.RemoveFirst();
+                Console.WriteLine(_questionStackPop.GetQuestion());
             }
             if (CurrentCategory() == "Science")
             {
