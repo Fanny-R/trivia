@@ -67,6 +67,8 @@
   <ItemGroup>
     <Compile Include="Game.cs" />
     <Compile Include="GameRunner.cs" />
+    <Compile Include="GeneratedQuestionsRepository.cs" />
+    <Compile Include="IQuestionsRepository.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Players.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

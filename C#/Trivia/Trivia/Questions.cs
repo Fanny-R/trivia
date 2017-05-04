@@ -4,16 +4,20 @@ namespace Trivia
 {
     public class Questions
     {
+        private IQuestionsRepository _questionsRepository;
         private readonly List<QuestionStack> _listQuestionStack;
 
-        public Questions()
+        public Questions(IQuestionsRepository questionsRepository)
         {
             _listQuestionStack = new List<QuestionStack>();
+            _questionsRepository = questionsRepository;
+
         }
 
-        public Questions(IEnumerable<String> questions)
+        public Questions(IEnumerable<String> questions, IQuestionsRepository questionsRepository)
         {
             _listQuestionStack = new List<QuestionStack>();
+            _questionsRepository = questionsRepository;
             foreach (var question in questions)
             {
                 AddQuestionStack(question);
@@ -21,7 +25,8 @@ namespace Trivia
         }
         public void AddQuestionStack(String name)
         {
-            _listQuestionStack.Add(new QuestionStack(name));
+            _listQuestionStack.Add(new QuestionStack(name, _questionsRepository));
+
         }
 
         public String AskQuestion(int playerPlace)

@@ -10,25 +10,13 @@ namespace Trivia
 
         private LinkedList<String> ListQuestions { get; set; }
 
-        public QuestionStack(string name)
+        public QuestionStack(string name, IQuestionsRepository questionsRepository)
         {
             Name = name;
             ListQuestions = new LinkedList<string>();
-            GenerateQuestions();
+            ListQuestions = questionsRepository.GetQuestions(name);
         }
 
-        public void AddQuestion()
-        {
-            ListQuestions.AddLast(Name + " Question " + ListQuestions.Count);
-        }
-
-        public void GenerateQuestions()
-        {
-            for (var i = 0; i < 50; i++)
-            {
-                AddQuestion();
-            }
-        }
 
         public String GetQuestion()
         {

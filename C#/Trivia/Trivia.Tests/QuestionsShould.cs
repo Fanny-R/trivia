@@ -20,7 +20,7 @@ namespace Trivia.Tests
             var previousConsoleOut = Console.Out;
             Console.SetOut(stringWriter);
             var category5 = "Category 5";
-            var questions = new Questions(new [] { "Category 1", "Category 2", "Category 3", "Category 4", category5});
+            var questions = new Questions(new [] { "Category 1", "Category 2", "Category 3", "Category 4", category5}, new GeneratedQuestionsRepository());
 
             //Act
             String question = questions.AskQuestion(4);
