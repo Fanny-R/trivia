@@ -21,8 +21,6 @@ namespace Trivia
                 questions.AddQuestionStack("Sports");
                 questions.AddQuestionStack("Rock");
 
-                questions.GenerateQuestions();
-
                 var aGame = new Game(players, questions);
 
                 Random rand = new Random(i);
