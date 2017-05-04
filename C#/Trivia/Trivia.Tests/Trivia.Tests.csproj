@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="GoldenMaster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionsShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

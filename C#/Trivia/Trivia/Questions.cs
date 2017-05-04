@@ -10,20 +10,18 @@ namespace Trivia
         {
             _listQuestionStack = new List<QuestionStack>();
         }
+
+        public Questions(IEnumerable<String> questions)
+        {
+            _listQuestionStack = new List<QuestionStack>();
+            foreach (var question in questions)
+            {
+                AddQuestionStack(question);
+            }
+        }
         public void AddQuestionStack(String name)
         {
             _listQuestionStack.Add(new QuestionStack(name));
-        }
-
-        public void GenerateQuestions()
-        {
-            for (var i = 0; i < 50; i++)
-            {
-                foreach (QuestionStack currentQuestionStack in _listQuestionStack)
-                {
-                    currentQuestionStack.AddQuestion();
-                }
-            }
         }
 
         public String AskQuestion(int playerPlace)
