@@ -15,7 +15,7 @@ namespace Trivia
                 players.AddPlayer("Pat");
                 players.AddPlayer("Sue");
 
-                var questions = new Questions(new GeneratedQuestionsRepository());
+                var questions = new Questions(new QuestionsFromFileRepository());
                 questions.AddQuestionStack("Pop");
                 questions.AddQuestionStack("Science");
                 questions.AddQuestionStack("Sports");
