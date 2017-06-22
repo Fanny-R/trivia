@@ -10,7 +10,9 @@ namespace Trivia
         {
             for (var i = 0; i < 10; i++)
             {
-                var players = new Players();
+                var questionUi = new ConsoleUI();
+
+                var players = new Players(questionUi);
                 players.AddPlayer("Chet");
                 players.AddPlayer("Pat");
                 players.AddPlayer("Sue");
@@ -21,9 +23,7 @@ namespace Trivia
                 questions.AddQuestionStack("Sports");
                 questions.AddQuestionStack("Rock");
 
-                var QuestionUi = new ConsoleUI();
-
-                var aGame = new Game(players, questions, QuestionUi);
+                var aGame = new Game(players, questions, questionUi);
 
                 Random rand = new Random(i);
 

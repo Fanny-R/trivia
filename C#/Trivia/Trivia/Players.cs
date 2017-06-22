@@ -6,13 +6,15 @@ namespace Trivia
 {
     public class Players
     {
+        private readonly IQuestionUI _questionUi;
         private List<Player> ListPlayer { get; set; }
         public Player CurrentPlayer { get; set; }
 
-        public Players()
+        public Players(IQuestionUI questionUi)
         {
             ListPlayer = new List<Player>();
             CurrentPlayer = null;
+            _questionUi = questionUi;
         }
         public void AddPlayer(string playerName)
         {
@@ -24,8 +26,8 @@ namespace Trivia
             }
 
             ListPlayer.Add(player);
-            Console.WriteLine(playerName + " was added");
-            Console.WriteLine("They are player number " + NumberOfPlayers());
+            _questionUi.DisplayMessage(playerName + " was added");
+            _questionUi.DisplayMessage("They are player number " + NumberOfPlayers());
             
         }
 
