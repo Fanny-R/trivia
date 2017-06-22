@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
+using Trivia.DataAccess;
+using Trivia.Domain;
 
 namespace Trivia.Tests
 {

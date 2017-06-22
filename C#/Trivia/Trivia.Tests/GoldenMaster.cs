@@ -3,6 +3,7 @@ using System.IO;
 using ApprovalTests;
 using ApprovalTests.Reporters;
 using NUnit.Framework;
+using Trivia.Domain;
 
 namespace Trivia.Tests
 {

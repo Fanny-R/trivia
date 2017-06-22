@@ -65,18 +65,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleUI.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="GameRunner.cs" />
-    <Compile Include="GeneratedQuestionsRepository.cs" />
-    <Compile Include="IQuestionsRepository.cs" />
-    <Compile Include="IQuestionUI.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="Players.cs" />
+    <Compile Include="Presentation\ConsoleUI.cs" />
+    <Compile Include="Domain\Game.cs" />
+    <Compile Include="Domain\GameRunner.cs" />
+    <Compile Include="DataAccess\GeneratedQuestionsRepository.cs" />
+    <Compile Include="Domain\IQuestionsRepository.cs" />
+    <Compile Include="Domain\IQuestionUI.cs" />
+    <Compile Include="Domain\Player.cs" />
+    <Compile Include="Domain\Players.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Questions.cs" />
-    <Compile Include="QuestionsFromFileRepository.cs" />
-    <Compile Include="QuestionStack.cs" />
+    <Compile Include="Domain\Questions.cs" />
+    <Compile Include="DataAccess\QuestionsFromFileRepository.cs" />
+    <Compile Include="Domain\QuestionStack.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
@@ -103,6 +103,7 @@
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

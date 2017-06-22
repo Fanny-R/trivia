@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Trivia.Presentation;
 
-namespace Trivia
+namespace Trivia.Domain
 {
     public class Players
     {

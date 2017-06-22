@@ -1,4 +1,6 @@
 ﻿using NUnit.Framework;
+using Trivia.DataAccess;
+using Trivia.Domain;
 
 namespace Trivia.Tests
 {

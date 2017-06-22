@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace Trivia
+using Trivia.DataAccess;
+
+namespace Trivia.Domain
 {
     public class Questions
     {

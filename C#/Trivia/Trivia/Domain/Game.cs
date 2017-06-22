@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Trivia.Presentation;
 
-namespace Trivia
+namespace Trivia.Domain
 {
     public class Game
     {
