@@ -4,6 +4,7 @@ namespace Trivia
 {
     public class Player
     {
+        private readonly IQuestionUI _questionUi;
         public string Name { get; private set; }
 
         public int Place { get; private set; }
@@ -12,12 +13,13 @@ namespace Trivia
 
         public bool InPenaltyBox { get; set; }
 
-        public Player(string name)
+        public Player(string name, IQuestionUI questionUi)
         {
             Name = name;
             Place = 0;
             GoldCoins = 0;
             InPenaltyBox = false;
+            _questionUi = questionUi;
         }
 
 
@@ -30,13 +32,13 @@ namespace Trivia
         public void WinAGoldCoin()
         {
             GoldCoins++;
-            Console.WriteLine(Name + " now has " + GoldCoins + " Gold Coins.");
+            _questionUi.DisplayMessage(Name + " now has " + GoldCoins + " Gold Coins.");
         }
 
         public void GoToPenaltyBox()
         {
             InPenaltyBox = true;
-            Console.WriteLine(Name + " was sent to the penalty box");
+            _questionUi.DisplayMessage(Name + " was sent to the penalty box");
         }
     }
 }

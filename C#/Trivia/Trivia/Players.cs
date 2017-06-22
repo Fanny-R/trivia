@@ -18,7 +18,7 @@ namespace Trivia
         }
         public void AddPlayer(string playerName)
         {
-            var player = new Player(playerName);
+            var player = new Player(playerName, _questionUi);
 
             if (ListPlayer.Count == 0)
             {
